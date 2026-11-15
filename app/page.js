@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 import { categories, site } from "@/lib/site";
 import PostCard from "@/components/PostCard";
+import SocialLinks from "@/components/SocialLinks";
 import T from "@/components/T";
 import { Bell, Diya, AipanMandala, Divider } from "@/components/Ornaments";
 
@@ -104,9 +105,8 @@ export default function Home() {
         <div className="join">
           <h2><T hi="हर नई कथा सबसे पहले पाएँ" hg="Har nayi katha sabse pehle paayein" /></h2>
           <p><T hi="कथा पसंद आए तो अपने परिवार और दोस्तों के साथ WhatsApp पर ज़रूर शेयर करें।" hg="Katha pasand aaye to apne parivaar aur doston ke saath WhatsApp par zaroor share karein." /></p>
-          {site.social.whatsapp && (
-            <a className="btn" href={site.social.whatsapp} target="_blank" rel="noopener noreferrer"><T hi="WhatsApp चैनल से जुड़ें" hg="WhatsApp channel join karein" /></a>
-          )}
+          <p className="join-sub"><T hi="हमसे जुड़ें और संपर्क करें:" hg="Humse judein aur sampark karein:" /></p>
+          <SocialLinks />
         </div>
       </section>
     </>
