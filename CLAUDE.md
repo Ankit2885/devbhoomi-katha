@@ -1,0 +1,53 @@
+# CLAUDE.md — workflow rules for this repo (देवभूमि कथा)
+
+Claude loads this file automatically at the start of every session. Follow it every time.
+Talk to the owner (Ankit) in Hinglish unless he asks otherwise.
+
+Live site: https://katha.creatorkitly.com (Vercel project `devbhoomi-katha`, GitHub `Ankit2885/devbhoomi-katha`, branch `main`).
+Every push to `main` auto-deploys. DNS: Cloudflare (creatorkitly.com zone, `katha` CNAME → Vercel, **DNS only**, never proxied).
+
+## Before making any change
+1. Read this file and `BLOG_WRITING_PROMPT.md` (for any post work).
+2. Read the latest entries in `PROGRESS.md`.
+3. Look at 1–2 existing posts in `content/posts/` and copy their format exactly.
+4. Only then add or change files.
+
+## While working
+- Don't rewrite working systems; prefer small, incremental changes and extend existing patterns.
+- Explain the impact before changing anything shared or deployment-sensitive (`lib/site.js` URL, `next.config.mjs`, env vars, DNS, domains).
+
+**Project-specific hard rules:**
+- **Posts are Markdown**, never new page files. Hindi post = `content/posts/<slug>.md` (all frontmatter). Hinglish version = `content/posts/<slug>.hinglish.md` (only `title`, `excerpt` + body). Slug is the URL: lowercase Latin, words joined with `-`, no dates.
+- **Every post MUST have a thumbnail.** `cover: "/images/covers/<slug>.jpg"` (1200×630 JPG, < 200 KB) + a descriptive `cover_alt`. No post ships without one.
+  - Owner sent a photo → crop/resize it to 1200×630 and save as `public/images/covers/<slug>.jpg`.
+  - No photo → make an original graphic in the **Aipan style**: copy an existing `design/covers/*.svg`, keep the frame (geru red `#a5302a`, white dotted border, corner circles, gold `#e3b04b` accents), draw the topic with simple line art, **no text inside the SVG**. Then run `npm run cover -- <slug>`.
+  - Never use photos of real people taken from the web, and never copy another site's images.
+- **Required frontmatter:** `title`, `excerpt` (~150 chars, shown in Google + WhatsApp preview), `date` (YYYY-MM-DD), `category` (one of `devi-devta`, `lok-katha`, `pavan-dham`, `aisa-kyon`, `parv-parampara`), `cover`, `cover_alt`, `tags` (4–6). Optional: `author` + `author_hinglish` (guest writers), `video` (YouTube/MP4), `featured: true` (only ONE post at a time — set the old one to `false`), `draft: true`.
+- **Always write the Hinglish file too** (transliterate faithfully, same headings) unless the owner says Hindi only.
+- **Owner/guest content is published as written.** Only fix obvious typos, add `##` sub-headings and paragraph breaks for readability, and bold key phrases. Never change their opinion, facts or tone. Add the author byline and the line *"यह लेखक के निजी विचार हैं।"* for opinion pieces.
+- **Facts:** stories are written as मान्यता/लोक कथा ("मान्यता है कि…"). Dates, distances, heights and history need a reliable source; if unsure, leave the number out. For "ऐसा क्यों?" posts always give both views: मान्यता **and** विज्ञान/इतिहास.
+- No hate or mockery of any community, religion, caste or region. No fake quotes, fake numbers, fake experiences or invented miracles presented as fact.
+- Media: YouTube/MP4 link on its own line in the body becomes a player. Inline images go in `public/images/<slug>-<n>.jpg` with `![alt](/images/...)`. Keep every image < 300 KB.
+- UI text must work in both languages: use `<T hi="…" hg="…" />` from `components/T.js`. English/other languages come from Google Translate automatically — don't create English files.
+- Colours and fonts live only in `app/globals.css` (`:root` tokens). Fonts come from `@fontsource/*` npm packages — **never `next/font/google`**.
+- No database except the optional Upstash Redis for likes (`app/api/likes`). Never commit keys or `.env*` files.
+- Before finishing: `npm run build` must pass.
+
+## Publishing a post (checklist)
+1. `content/posts/<slug>.md` + `<slug>.hinglish.md` written.
+2. Thumbnail at `public/images/covers/<slug>.jpg` (and `design/covers/<slug>.svg` if it's our own graphic).
+3. `featured` flag moved if this is the new top story.
+4. `npm run build` passes.
+5. Commit + push to `main` → Vercel deploys in ~1 minute.
+6. Open `https://katha.creatorkitly.com/katha/<slug>` and check title, thumbnail and share buttons.
+7. Send Ankit the live link in one line.
+
+## After a significant change
+Significant = new feature, layout/design change, dependency, env var, domain/DNS or deployment change.
+- Append an entry to `PROGRESS.md` (date, what changed, files, reason, next steps).
+- Tell Ankit in one line which docs you updated.
+
+New posts and small fixes don't need a `PROGRESS.md` entry.
+
+## If information is missing
+Ask the owner. Don't guess facts, dates, names, places or numbers.
