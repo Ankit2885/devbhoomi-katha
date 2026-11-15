@@ -3,6 +3,7 @@ import { getAllPosts } from "@/lib/posts";
 import { categories, site } from "@/lib/site";
 import PostCard from "@/components/PostCard";
 import SocialLinks from "@/components/SocialLinks";
+import PopularPosts from "@/components/PopularPosts";
 import T from "@/components/T";
 import { Bell, Diya, AipanMandala, Divider } from "@/components/Ornaments";
 
@@ -63,6 +64,8 @@ export default function Home() {
           <PostCard post={featured} variant="featured" />
         </section>
       )}
+
+      <PopularPosts posts={posts} count={3} />
 
       <section className="wrap sec">
         <div className="sec-head">

@@ -14,9 +14,30 @@ export const metadata = {
   metadataBase: new URL(site.url),
   title: { default: `${site.name} — ${site.tagline}`, template: `%s | ${site.name}` },
   description: site.tagline,
-  openGraph: { siteName: site.name, locale: "hi_IN", type: "website", images: ["/images/og-default.jpg"] },
+  applicationName: site.name,
+  keywords: ["उत्तराखंड", "देवभूमि", "देवी-देवता", "लोक कथा", "कुमाऊँ", "गढ़वाल", "Uttarakhand", "Devbhoomi", "Pahadi katha"],
+  openGraph: {
+    siteName: site.name,
+    locale: "hi_IN",
+    type: "website",
+    images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: site.name }],
+  },
   twitter: { card: "summary_large_image" },
-  icons: { icon: "/favicon.svg" },
+  // Google Discover और Image search में बड़ी फ़ोटो दिखाने की अनुमति
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+  },
+  alternates: { canonical: "/" },
 };
 
 export const viewport = { themeColor: "#a5302a" };
