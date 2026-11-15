@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { categories } from "@/lib/site";
 import { getAllPosts } from "@/lib/posts";
-import PostCard from "@/components/PostCard";
+import PostGrid from "@/components/PostGrid";
 import T from "@/components/T";
 
 export const metadata = { title: "सभी कथाएँ" };
@@ -23,7 +23,7 @@ export default function AllPosts() {
         </div>
       </section>
       <section className="wrap sec">
-        <div className="grid">{posts.map((p) => <PostCard key={p.slug} post={p} />)}</div>
+        <PostGrid posts={posts} />
       </section>
     </>
   );
