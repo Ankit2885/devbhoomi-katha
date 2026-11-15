@@ -2,7 +2,11 @@
 import { useEffect, useState } from "react";
 import { FaWhatsapp, FaFacebookF, FaXTwitter, FaTelegram, FaLinkedinIn, FaPinterestP, FaRedditAlien, FaEnvelope, FaLink, FaShareNodes, FaCheck } from "react-icons/fa6";
 
-export default function ShareBar({ url, title, image, compact = false }) {
+export default function ShareBar({ slug, url, title, image, compact = false }) {
+  const track = () => {
+    if (!slug) return;
+    try { fetch(`/api/shares/${slug}`, { method: "POST", keepalive: true }); } catch {}
+  };
   const [copied, setCopied] = useState(false);
   const [canNative, setCanNative] = useState(false);
   useEffect(() => setCanNative(typeof navigator !== "undefined" && !!navigator.share), []);
@@ -22,6 +26,7 @@ export default function ShareBar({ url, title, image, compact = false }) {
   ];
 
   const copy = async () => {
+    track();
     try {
       await navigator.clipboard.writeText(url);
     } catch {
@@ -33,13 +38,13 @@ export default function ShareBar({ url, title, image, compact = false }) {
   };
 
   const native = async () => {
-    try { await navigator.share({ title, text: title, url }); } catch {}
+    try { await navigator.share({ title, text: title, url }); track(); } catch {}
   };
 
   return (
     <div className={`share ${compact ? "compact" : ""}`}>
       {links.map(({ k, label, I, href }) => (
-        <a key={k} className={`sh sh-${k}`} href={href} target="_blank" rel="noopener noreferrer" aria-label={`${label} पर शेयर करें`} title={label}>
+        <a key={k} className={`sh sh-${k}`} href={href} onClick={track} target="_blank" rel="noopener noreferrer" aria-label={`${label} पर शेयर करें`} title={label}>
           <I />{!compact && k === "whatsapp" && <span>WhatsApp</span>}
         </a>
       ))}

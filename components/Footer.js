@@ -37,7 +37,7 @@ export default function Footer() {
           <h4><T hi="देवभूमि कथा" hg="Devbhoomi Katha" /></h4>
           <Link href="/kathayen"><T hi="सभी कथाएँ" hg="Sabhi Kathayein" /></Link>
           <Link href="/parichay"><T hi="परिचय" hg="Parichay" /></Link>
-          <Link href="/sitemap.xml">Sitemap</Link>
+          <a href="/sitemap.xml">Sitemap</a>
         </div>
       </div>
       <div className="wrap foot-bottom">
