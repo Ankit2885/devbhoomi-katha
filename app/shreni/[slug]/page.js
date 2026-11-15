@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { categories } from "@/lib/site";
 import { getAllPosts } from "@/lib/posts";
-import PostCard from "@/components/PostCard";
+import PostGrid from "@/components/PostGrid";
 import T from "@/components/T";
 import Link from "next/link";
 
@@ -36,7 +36,7 @@ export default async function CategoryPage({ params }) {
       </section>
       <section className="wrap sec">
         {posts.length ? (
-          <div className="grid">{posts.map((p) => <PostCard key={p.slug} post={p} />)}</div>
+          <PostGrid posts={posts} />
         ) : (
           <p className="empty"><T hi="इस श्रेणी में कथाएँ जल्द आएँगी 🙏" hg="Is shreni mein kathayein jald aayengi 🙏" /></p>
         )}
