@@ -8,7 +8,7 @@ import SocialLinks from "@/components/SocialLinks";
 import LikeButton from "@/components/LikeButton";
 import ReadingProgress from "@/components/ReadingProgress";
 import T from "@/components/T";
-import { Divider } from "@/components/Ornaments";
+import { Divider, Diya } from "@/components/Ornaments";
 
 export function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
@@ -118,6 +118,18 @@ export default async function PostPage({ params }) {
               <div className="prose" dangerouslySetInnerHTML={{ __html: post.html }} />
             </>
           )}
+
+          <div className="katha-end" role="separator" aria-label="कथा समाप्त">
+            <div className="ke-line">
+              <span />
+              <div className="ke-badge">
+                <Diya />
+                <b><T hi="॥ कथा समाप्त ॥" hg="॥ Katha samapt ॥" /></b>
+              </div>
+              <span />
+            </div>
+            <p><T hi="जय देवभूमि 🙏" hg="Jai Devbhoomi 🙏" /></p>
+          </div>
 
           {post.tags.length > 0 && (
             <div className="tags">{post.tags.map((t) => <span key={t}>#{t}</span>)}</div>
