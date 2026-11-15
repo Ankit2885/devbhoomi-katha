@@ -2,8 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPost, getRelated, getPrevNext, formatDate, videoEmbed } from "@/lib/posts";
 import { getCategory, site } from "@/lib/site";
-import PostCard from "@/components/PostCard";
+import RelatedPosts from "@/components/RelatedPosts";
 import ShareBar from "@/components/ShareBar";
+import SocialLinks from "@/components/SocialLinks";
 import LikeButton from "@/components/LikeButton";
 import ReadingProgress from "@/components/ReadingProgress";
 import T from "@/components/T";
@@ -27,9 +28,10 @@ export async function generateMetadata({ params }) {
       type: "article",
       publishedTime: post.date,
       ...(post.author ? { authors: [post.author] } : {}),
-      images: post.cover ? [post.cover] : ["/images/og-default.jpg"],
+      images: [{ url: post.cover || "/images/og-default.jpg", width: 1200, height: 630, alt: post.coverAlt || post.title }],
     },
-    twitter: { card: "summary_large_image", title: post.title, description: post.excerpt },
+    twitter: { card: "summary_large_image", title: post.title, description: post.excerpt, images: [post.cover || "/images/og-default.jpg"] },
+    keywords: post.tags,
   };
 }
 
@@ -38,7 +40,7 @@ export default async function PostPage({ params }) {
   const post = await getPost(slug);
   if (!post) notFound();
   const cat = getCategory(post.category);
-  const related = getRelated(post, 3);
+  const related = getRelated(post);
   const { newer, older } = getPrevNext(post.slug);
   const url = `${site.url}/katha/${post.slug}`;
   const image = post.cover ? `${site.url}${post.cover}` : `${site.url}/images/og-default.jpg`;
@@ -49,8 +51,11 @@ export default async function PostPage({ params }) {
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
-    image,
+    image: { "@type": "ImageObject", url: image, width: 1200, height: 630 },
     datePublished: post.date,
+    dateModified: post.date,
+    keywords: post.tags.join(", "),
+    articleSection: cat.hi,
     inLanguage: "hi",
     ...(post.author ? { author: { "@type": "Person", name: post.author } } : {}),
     publisher: { "@type": "Organization", name: site.name },
@@ -82,7 +87,7 @@ export default async function PostPage({ params }) {
           </div>
           <div className="art-actions">
             <LikeButton slug={post.slug} />
-            <ShareBar url={url} title={post.title} image={image} compact />
+            <ShareBar slug={post.slug} url={url} title={post.title} image={image} compact />
           </div>
         </header>
 
@@ -99,7 +104,7 @@ export default async function PostPage({ params }) {
         ) : (
           post.cover && (
             <figure className="wrap-wide art-media">
-              <img src={post.cover} alt={post.coverAlt} />
+              <img src={post.cover} alt={post.coverAlt} width="1200" height="630" fetchPriority="high" decoding="async" />
             </figure>
           )
         )}
@@ -122,8 +127,16 @@ export default async function PostPage({ params }) {
             <Divider />
             <h3><T hi="कथा अच्छी लगी? औरों तक पहुँचाएँ 🙏" hg="Katha achhi lagi? Auron tak pahunchayein 🙏" /></h3>
             <LikeButton slug={post.slug} />
-            <ShareBar url={url} title={post.title} image={image} />
+            <ShareBar slug={post.slug} url={url} title={post.title} image={image} />
           </div>
+
+          {Object.values(site.social).some(Boolean) && (
+            <div className="follow-box">
+              <h3><T hi="पढ़ने के लिए धन्यवाद 🙏" hg="Padhne ke liye dhanyavaad 🙏" /></h3>
+              <p><T hi="ऐसी और कथाएँ, वीडियो और गाँव की ख़बरों के लिए हमसे जुड़ें। अपनी बात या सुझाव भी यहीं भेजें:" hg="Aisi aur kathayein, video aur gaon ki khabron ke liye humse judein. Apni baat ya sujhav bhi yahin bhejein:" /></p>
+              <SocialLinks />
+            </div>
+          )}
 
           <div className="prevnext">
             {older ? (
@@ -136,15 +149,10 @@ export default async function PostPage({ params }) {
         </div>
       </article>
 
-      {related.length > 0 && (
-        <section className="wrap sec related">
-          <div className="sec-head"><h2><T hi="आगे पढ़ें" hg="Aage padhein" /></h2></div>
-          <div className="grid">{related.map((p) => <PostCard key={p.slug} post={p} />)}</div>
-        </section>
-      )}
+      <RelatedPosts candidates={related} count={3} />
 
       <div className="mobile-share">
-        <ShareBar url={url} title={post.title} image={image} compact />
+        <ShareBar slug={post.slug} url={url} title={post.title} image={image} compact />
       </div>
     </>
   );
