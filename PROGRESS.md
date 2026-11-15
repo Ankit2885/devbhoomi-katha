@@ -5,7 +5,7 @@ Newest first. Add an entry for every significant change (see `CLAUDE.md`).
 ## 2026-11-15 — Popularity ranking, inline graphics, 3 new posts, image SEO
 - **Changed:** share counts (`/api/shares`), combined `/api/stats`, `lib/redis.js`; popular section on home, popularity-aware "आगे पढ़ें", लोकप्रिय/नई tabs on list pages; like/share counts on cards; "पढ़ने के लिए धन्यवाद" follow box with YouTube/Facebook on every post; inline Aipan illustrations for all posts (`design/images` → `public/images/posts`, `npm run cover` now builds both); new posts रूपकुंड, जागेश्वर धाम, हरेला (facts checked against Wikipedia, Nov 2026); favicon.ico/apple icon/manifest; og:image sizes, `max-image-preview: large`, image sitemap, width/height on all images; `sharp` moved to dependencies.
 - **Why:** owner wants likes/shares to drive recommendations, more images per post, and better reach (Discover/Image search).
-- **Needs:** Upstash Redis must be connected in Vercel (Storage → Upstash Redis → connect to `devbhoomi-katha`) — until then counts are not stored and lists fall back to date order.
+- **Database:** Upstash Redis (free plan, `upstash-kv-aureolin-ocean`, region Washington D.C.) connected to the Vercel project with prefix `KV` → `KV_REST_API_URL` / `KV_REST_API_TOKEN` (Production + Preview).
 
 ## 2026-11-15 — Post support for guest authors + content rules
 - **Changed:** added `author` / `author_hinglish` frontmatter (byline on the post page and in Article JSON-LD); added `CLAUDE.md`, `BLOG_WRITING_PROMPT.md`, this file; added `design/covers/*.svg` + `npm run cover` (sharp) to build Aipan-style thumbnails; new post *पहाड़ की संस्कृति और हमारी जिम्मेदारी* (by कुलबीर सिंह रावत) as the featured story.
