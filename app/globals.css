@@ -21,6 +21,7 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body { font-family: var(--f-body), "Mukta", system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.65; font-size: 17px; overflow-x: hidden; top: 0 !important; }
 a { color: inherit; text-decoration: none; }
 img, video, iframe { max-width: 100%; display: block; }
+img, video { height: auto; }
 button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
 
 /* ---- भाषा: हिंदी / Hinglish ---- */
@@ -208,6 +209,14 @@ body > .skiptranslate { display: none !important; }
 .video.file video { object-fit: contain; }
 .art-media .video { margin: 0; }
 
+/* कथा समाप्त होने का निशान */
+.katha-end { margin: 46px 0 6px; text-align: center; }
+.katha-end .ke-line { display: flex; align-items: center; gap: 14px; }
+.katha-end .ke-line > span { flex: 1; height: 10px; background: radial-gradient(circle, var(--geru) 2.5px, transparent 3px) 0 0 / 14px 10px; }
+.katha-end .ke-badge { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+.katha-end .ke-badge svg { width: 54px; height: 46px; }
+.katha-end b { font-family: var(--f-head), serif; font-weight: 400; font-size: 24px; color: var(--geru); letter-spacing: .02em; white-space: nowrap; }
+.katha-end p { color: var(--muted); font-size: 15px; margin-top: 4px; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
 .tags span { background: #fbeee6; color: var(--geru); padding: 4px 12px; border-radius: 999px; font-size: 14px; font-weight: 500; }
 
@@ -311,6 +320,11 @@ body > .skiptranslate { display: none !important; }
   .prose { font-size: 18.5px; line-height: 1.85; }
   .prose h2 { font-size: 25px; }
   .art-head { padding-top: 26px; }
+  .art-media { padding: 0; margin-top: 20px; }
+  .art-media img { border-radius: 0; box-shadow: none; }
+  .art-media .video { border-radius: 0; }
+  .prose img { border-radius: 10px; }
+  .katha-end b { font-size: 22px; }
   .lead { font-size: 18px; }
   .art-actions .share { display: none; }
   .prevnext { grid-template-columns: 1fr; }
