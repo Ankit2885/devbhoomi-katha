@@ -119,5 +119,5 @@ npm run dev
 ## 💰 कमाई के लिए आगे
 
 - **Google AdSense:** 20–30 कथाएँ होने के बाद apply करें
-- **Google Search Console** में `https://आपका-डोमेन/sitemap.xml` जमा करें
+- **Google Search Console** में `https://katha.creatorkitly.com/sitemap.xml` जमा करें
 - हर कथा को WhatsApp, Instagram Reels और YouTube Shorts पर शेयर करें
