@@ -25,6 +25,9 @@ Baalak ne jawab diya:
 
 Yeh baat Raja tak pahunchi, sach saamne aaya aur raniyon ko dand mila. Yahi baalak aage chalkar nyaypriya raja bana aur log unhe **Golu Devta** ke roop mein poojne lage.
 
+![Golu Devta ke mandir mein ghantiyon ke beech tangi arzi (chitra)](/images/posts/golu-devta-arzi.jpg)
+*Golu Devta ke mandir mein ghantiyon ke beech tangi arzi (chitra)*
+
 ## Arzi aur ghantiyan kyon?
 
 Golu Devta ke mandir ki sabse anokhi parampara hai **arzi likhna**. Bhakt saade kaagaz par — kai log to stamp paper par bhi — apni shikayat ya manokamna likhkar mandir mein taang dete hain, theek waise jaise adaalat mein arzi di jaati hai.

@@ -27,6 +27,9 @@ Yadi parampara badalni hi thi, to pehle poore Uttarakhand ko poornatah shakahari
 
 Halanki, yahan ek vyavaharik prashn yeh bhi khada hota hai ki Uttarakhand mein **bakri paalan** logon ke rozgaar ka ek pramukh saadhan hai. Yadi iska upyog nahi hoga, to yeh aajeevika ka madhyam kaise banega?
 
+![Raat mein pahadi gaon, Devi ka mandir aur jungle mein chamakti guldar ki aankhein (chitra)](/images/posts/pahad-guldar-aur-gaon.jpg)
+*Raat mein pahadi gaon, Devi ka mandir aur jungle mein chamakti guldar ki aankhein (chitra)*
+
 ## Nar ya Narayani?
 
 Prakriti jab apna raudra roop dikhati hai, to woh kisi bhi madhyam se apna nyay kar sakti hai. Aise mein humein Mata ke anek roop dekhne ko milenge. Uttarakhand dharti ka swarg hai, aur yahan ki paristhitiyon ka achha ya bura prabhav poore desh par padta hai.

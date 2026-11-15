@@ -17,6 +17,9 @@ Is yatra ki sabse anokhi baat hai **chaar seeng wala medha**, jise sthaniya bhas
 
 Yatra ke ant mein **Homkund** ke paas uski peeth par Devi ka shringaar aur bhent baandhkar use akele Himalaya ki or chhod diya jaata hai. Log maante hain ki woh Maa Nanda ka saamaan lekar Kailash jaata hai.
 
+![Raj Jat mein pahadon ke raaste aage badhti ringaal ki chhantoliyan (chitra)](/images/posts/nanda-raj-jat-chhantoli.jpg)
+*Raj Jat mein pahadon ke raaste aage badhti ringaal ki chhantoliyan (chitra)*
+
 ## Yatra ka raasta
 
 - Shuruaat: **Nauti gaon** (Karnaprayag ke paas, Chamoli)

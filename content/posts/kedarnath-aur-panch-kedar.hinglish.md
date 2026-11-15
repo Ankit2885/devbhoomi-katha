@@ -19,6 +19,9 @@ Pandav unka peechha karte hue wahan bhi pahunch gaye. Tab Shiv ne **bail (Nandi)
 
 Bail zameen mein samaane laga. Bheem ne jhapatkar uski **peeth (koobad)** pakad li. Shiv Pandavon ki lagan se prasann hue, unhe darshan diye aur paap se mukt kiya.
 
+![Himalaya ki ghaatiyon mein phaile paanch Kedar (chitra)](/images/posts/panch-kedar-yatra.jpg)
+*Himalaya ki ghaatiyon mein phaile paanch Kedar (chitra)*
+
 ## Panch Kedar ka janm
 
 Manyata hai ki bail ke shareer ke alag-alag ang paanch jagahon par prakat hue. Yahi hain **Panch Kedar**:

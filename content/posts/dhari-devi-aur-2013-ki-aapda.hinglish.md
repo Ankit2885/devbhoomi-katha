@@ -17,6 +17,9 @@ Alaknanda par ban rahi **Srinagar hydro power project** ki jheel mein purana man
 
 Usi raat aur agle din Kedarghati mein woh bheeshan aapda aayi jismein hazaron logon ki jaan gayi. Bahut se logon ke liye yeh sanyog nahi, balki **Devi ka krodh** tha.
 
+![Ek taraf aastha — nadi ke beech Dhari Devi ka mandir, doosri taraf vigyan — bhaari baarish aur glacier jheel (chitra)](/images/posts/dhari-devi-aastha-vigyan.jpg)
+*Ek taraf aastha — nadi ke beech Dhari Devi ka mandir, doosri taraf vigyan — bhaari baarish aur glacier jheel (chitra)*
+
 ## Vigyan kya kehta hai?
 
 Vaigyanikon aur sarkari reports ne aapda ke ye kaaran bataye:
