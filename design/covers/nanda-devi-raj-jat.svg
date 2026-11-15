@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#a5302a"/>
+  <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="11" cy="11" r="1.6" fill="#fffaf2" opacity=".09"/></pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect x="22" y="22" width="1156" height="586" rx="18" fill="none" stroke="#fffaf2" stroke-width="3"/>
+  <rect x="36" y="36" width="1128" height="558" rx="12" fill="none" stroke="#fffaf2" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+  <g transform="translate(60 60)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g><g transform="translate(1140 60)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g><g transform="translate(60 570)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g><g transform="translate(1140 570)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g>
+
+    <circle cx="930" cy="150" r="70" fill="none" stroke="#e3b04b" stroke-width="3" stroke-dasharray="3 9" stroke-linecap="round"/>
+    <circle cx="930" cy="150" r="46" fill="#e3b04b"/>
+    <g fill="none" stroke="#fffaf2" stroke-width="4" stroke-linejoin="round">
+      <path d="M60 470 L300 260 L420 340 L600 110 L780 340 L880 280 L1140 470" />
+      <path d="M560 160 L600 110 L640 160 L620 150 L600 175 L580 150Z" fill="#fffaf2"/>
+      <path d="M270 285 L300 260 L330 285 L300 300Z" fill="#fffaf2"/>
+    </g>
+    <path d="M120 560 C300 520 380 470 520 440 C640 415 700 380 760 340" fill="none" stroke="#fffaf2" stroke-width="4" stroke-dasharray="2 14" stroke-linecap="round"/>
+    <g transform="translate(230 520)"><line x1="0" y1="0" x2="0" y2="-50" stroke="#fffaf2" stroke-width="3"/><path d="M0 -50 L24 -42 L0 -34Z" fill="#fffaf2"/></g><g transform="translate(400 468)"><line x1="0" y1="0" x2="0" y2="-50" stroke="#fffaf2" stroke-width="3"/><path d="M0 -50 L28 -42 L0 -34Z" fill="#e3b04b"/></g><g transform="translate(560 432)"><line x1="0" y1="0" x2="0" y2="-50" stroke="#fffaf2" stroke-width="3"/><path d="M0 -50 L24 -42 L0 -34Z" fill="#fffaf2"/></g><g transform="translate(700 375)"><line x1="0" y1="0" x2="0" y2="-50" stroke="#fffaf2" stroke-width="3"/><path d="M0 -50 L28 -42 L0 -34Z" fill="#e3b04b"/></g>
+    <g transform="translate(130 470)" fill="#fffaf2">
+      <ellipse cx="0" cy="0" rx="44" ry="24"/>
+      <circle cx="48" cy="-14" r="15"/>
+      <path d="M40 -26 C30 -50 52 -54 54 -36 M56 -26 C66 -50 78 -42 64 -30 M46 -28 C44 -44 34 -44 36 -30 M60 -28 C64 -40 74 -36 68 -28" stroke="#fffaf2" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <rect x="-30" y="18" width="8" height="26"/><rect x="-10" y="18" width="8" height="26"/><rect x="10" y="18" width="8" height="26"/><rect x="28" y="18" width="8" height="26"/>
+      <rect x="-24" y="-30" width="44" height="14" rx="4" fill="#e3b04b"/>
+    </g>
+  </svg>
