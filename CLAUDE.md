@@ -22,6 +22,7 @@ Every push to `main` auto-deploys. DNS: Cloudflare (creatorkitly.com zone, `kath
   - Owner sent a photo → crop/resize it to 1200×630 and save as `public/images/covers/<slug>.jpg`.
   - No photo → make an original graphic in the **Aipan style**: copy an existing `design/covers/*.svg`, keep the frame (geru red `#a5302a`, white dotted border, corner circles, gold `#e3b04b` accents), draw the topic with simple line art, **no text inside the SVG**. Then run `npm run cover -- <slug>`.
   - Never use photos of real people taken from the web, and never copy another site's images.
+- **Every post should also have at least one illustration inside the body** (placed before a middle `##` heading) with alt text + an italic caption line right below it: `![alt](/images/posts/<name>.jpg)` then `*caption (चित्र)*`. Our own graphics: SVG in `design/images/<name>.svg` (same Aipan frame rules) → `npm run cover -- <name>` → `public/images/posts/<name>.jpg`. Add the same image to the Hinglish file with a Hinglish caption.
 - **Required frontmatter:** `title`, `excerpt` (~150 chars, shown in Google + WhatsApp preview), `date` (YYYY-MM-DD), `category` (one of `devi-devta`, `lok-katha`, `pavan-dham`, `aisa-kyon`, `parv-parampara`), `cover`, `cover_alt`, `tags` (4–6). Optional: `author` + `author_hinglish` (guest writers), `video` (YouTube/MP4), `featured: true` (only ONE post at a time — set the old one to `false`), `draft: true`.
 - **Always write the Hinglish file too** (transliterate faithfully, same headings) unless the owner says Hindi only.
 - **Owner/guest content is published as written.** Only fix obvious typos, add `##` sub-headings and paragraph breaks for readability, and bold key phrases. Never change their opinion, facts or tone. Add the author byline and the line *"यह लेखक के निजी विचार हैं।"* for opinion pieces.
@@ -30,12 +31,15 @@ Every push to `main` auto-deploys. DNS: Cloudflare (creatorkitly.com zone, `kath
 - Media: YouTube/MP4 link on its own line in the body becomes a player. Inline images go in `public/images/<slug>-<n>.jpg` with `![alt](/images/...)`. Keep every image < 300 KB.
 - UI text must work in both languages: use `<T hi="…" hg="…" />` from `components/T.js`. English/other languages come from Google Translate automatically — don't create English files.
 - Colours and fonts live only in `app/globals.css` (`:root` tokens). Fonts come from `@fontsource/*` npm packages — **never `next/font/google`**.
-- No database except the optional Upstash Redis for likes (`app/api/likes`). Never commit keys or `.env*` files.
+- **Popularity:** likes (`/api/likes/[slug]`) and shares (`/api/shares/[slug]`, fired by `ShareBar` with `slug`) are counted in Upstash Redis (`lib/redis.js`, env `KV_REST_API_URL`/`KV_REST_API_TOKEN`). `/api/stats` returns both. Score = likes + 2 × shares (`lib/format.js` → `popularity`). Home "सबसे लोकप्रिय", "आगे पढ़ें" (`RelatedPosts`: topic match + popularity) and list pages (`PostGrid`: लोकप्रिय/नई tabs) all use it. Without Redis everything falls back to date order — never break that fallback.
+- No other database. Never commit keys or `.env*` files.
+- **Navigation stays client-side:** internal links always use `next/link` (no page reload). Only the Google Translate languages reload the page — that is expected.
+- **Image SEO:** every `<img>` has `alt`, `width`, `height`; covers are exactly 1200×630 (used as `og:image` with width/height). The sitemap lists each post's images. Keep `max-image-preview: large` in `app/layout.js` (Google Discover).
 - Before finishing: `npm run build` must pass.
 
 ## Publishing a post (checklist)
 1. `content/posts/<slug>.md` + `<slug>.hinglish.md` written.
-2. Thumbnail at `public/images/covers/<slug>.jpg` (and `design/covers/<slug>.svg` if it's our own graphic).
+2. Thumbnail at `public/images/covers/<slug>.jpg` (and `design/covers/<slug>.svg` if it's our own graphic) + at least one inline illustration in `public/images/posts/`.
 3. `featured` flag moved if this is the new top story.
 4. `npm run build` passes.
 5. Commit + push to `main` → Vercel deploys in ~1 minute.

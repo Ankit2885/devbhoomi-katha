@@ -76,6 +76,7 @@ When Ankit sends text written by himself or someone else:
 - [ ] Title ≤ 60 chars and has the main search phrase
 - [ ] Excerpt 130–155 chars and reads well as a WhatsApp preview
 - [ ] Thumbnail 1200×630, < 200 KB, `cover_alt` filled
+- [ ] At least one inline illustration with alt + caption (Hindi and Hinglish files)
 - [ ] Hinglish file present
 - [ ] Only one `featured: true` across all posts
 - [ ] No unsure numbers or dates; stories framed as मान्यता
