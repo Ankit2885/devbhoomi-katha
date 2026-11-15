@@ -2,12 +2,25 @@
 import { useEffect, useRef, useState } from "react";
 import { autoLanguages } from "@/lib/site";
 
+// Google Translate अपनी cookie मुख्य डोमेन (.creatorkitly.com) पर भी लिख देता है,
+// इसलिए host और उसके हर parent domain से cookie हटानी पड़ती है — वरना भाषा वापस नहीं बदलती
+function domainVariants() {
+  const parts = location.hostname.split(".");
+  const out = [""];
+  for (let i = 0; i < parts.length - 1; i++) {
+    const d = parts.slice(i).join(".");
+    out.push(d, "." + d);
+  }
+  return out;
+}
+
 function clearGoogTrans() {
-  const host = location.hostname;
-  const exp = "expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
-  document.cookie = `googtrans=; ${exp}`;
-  document.cookie = `googtrans=; ${exp}; domain=${host}`;
-  document.cookie = `googtrans=; ${exp}; domain=.${host}`;
+  const exp = "expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  for (const d of domainVariants()) {
+    for (const path of ["/", ""]) {
+      document.cookie = `googtrans=; ${exp}${path ? `; path=${path}` : ""}${d ? `; domain=${d}` : ""}`;
+    }
+  }
 }
 
 function currentAuto() {
@@ -36,14 +49,20 @@ export default function LangSwitcher() {
 
   const choose = (code) => {
     setOpen(false);
+    const hadAuto = currentAuto();
     if (code === "hi" || code === "hinglish") {
       try { localStorage.setItem("dk-lang", code); } catch {}
+      if (hadAuto) {
+        // अनुवाद चालू था: cookie हटाकर साफ़ पेज दोबारा लोड करो (React को छुए बिना)
+        clearGoogTrans();
+        location.reload();
+        return;
+      }
       document.documentElement.setAttribute("data-lang", code);
-      const hadAuto = currentAuto();
       setLang(code);
-      if (hadAuto) { clearGoogTrans(); location.reload(); }
       return;
     }
+    if (hadAuto === code) return;
     // बाकी भाषाएँ: हिंदी लेख को Google Translate से अनुवाद करें
     try { localStorage.setItem("dk-lang", "hi"); } catch {}
     clearGoogTrans();
