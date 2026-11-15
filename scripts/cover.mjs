@@ -1,22 +1,31 @@
-// कवर/थंबनेल बनाता है: design/covers/<slug>.svg  →  public/images/covers/<slug>.jpg (1200x630)
-// चलाएँ:  npm run cover            (सारे कवर)
-//         npm run cover -- <slug>  (सिर्फ़ एक)
+// ग्राफ़िक्स बनाता है (1200x630 JPG):
+//   design/covers/<slug>.svg  →  public/images/covers/<slug>.jpg   (थंबनेल)
+//   design/images/<name>.svg  →  public/images/posts/<name>.jpg    (कथा के अंदर के चित्र)
+// चलाएँ:  npm run cover            (सब)
+//         npm run cover -- <name>  (सिर्फ़ एक)
 import fs from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
 
-const SRC = path.join(process.cwd(), "design", "covers");
-const OUT = path.join(process.cwd(), "public", "images", "covers");
-fs.mkdirSync(OUT, { recursive: true });
-
+const root = process.cwd();
+const sets = [
+  [path.join(root, "design", "covers"), path.join(root, "public", "images", "covers")],
+  [path.join(root, "design", "images"), path.join(root, "public", "images", "posts")],
+];
 const only = process.argv[2];
-const files = fs.readdirSync(SRC).filter((f) => f.endsWith(".svg") && !f.startsWith("_") && (!only || f === `${only}.svg`));
-if (!files.length) {
-  console.error(only ? `design/covers/${only}.svg नहीं मिली` : "design/covers में कोई SVG नहीं है");
-  process.exit(1);
+let done = 0;
+for (const [src, out] of sets) {
+  if (!fs.existsSync(src)) continue;
+  fs.mkdirSync(out, { recursive: true });
+  for (const f of fs.readdirSync(src)) {
+    if (!f.endsWith(".svg") || f.startsWith("_") || (only && f !== `${only}.svg`)) continue;
+    const dest = path.join(out, f.replace(/\.svg$/, ".jpg"));
+    await sharp(path.join(src, f), { density: 96 }).resize(1200, 630).jpeg({ quality: 80, mozjpeg: true }).toFile(dest);
+    console.log("✓", path.relative(root, dest), Math.round(fs.statSync(dest).size / 1024) + "KB");
+    done++;
+  }
 }
-for (const f of files) {
-  const out = path.join(OUT, f.replace(/\.svg$/, ".jpg"));
-  await sharp(path.join(SRC, f), { density: 96 }).resize(1200, 630).jpeg({ quality: 80, mozjpeg: true }).toFile(out);
-  console.log("✓", path.relative(process.cwd(), out), Math.round(fs.statSync(out).size / 1024) + "KB");
+if (!done) {
+  console.error(only ? `${only}.svg नहीं मिली (design/covers या design/images में देखें)` : "कोई SVG नहीं मिली");
+  process.exit(1);
 }
