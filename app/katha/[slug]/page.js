@@ -26,6 +26,7 @@ export async function generateMetadata({ params }) {
       description: post.excerpt,
       type: "article",
       publishedTime: post.date,
+      ...(post.author ? { authors: [post.author] } : {}),
       images: post.cover ? [post.cover] : ["/images/og-default.jpg"],
     },
     twitter: { card: "summary_large_image", title: post.title, description: post.excerpt },
@@ -51,6 +52,7 @@ export default async function PostPage({ params }) {
     image,
     datePublished: post.date,
     inLanguage: "hi",
+    ...(post.author ? { author: { "@type": "Person", name: post.author } } : {}),
     publisher: { "@type": "Organization", name: site.name },
     mainEntityOfPage: url,
   };
@@ -68,6 +70,12 @@ export default async function PostPage({ params }) {
           <h1><T hi={post.title} hg={post.titleHg} /></h1>
           <p className="lead"><T hi={post.excerpt} hg={post.excerptHg} /></p>
           <div className="art-meta">
+            {post.author && (
+              <>
+                <span className="byline"><T hi={`✍️ ${post.author}`} hg={`✍️ ${post.authorHg || post.author}`} /></span>
+                <span>·</span>
+              </>
+            )}
             <span><T hi={formatDate(post.date, "hi")} hg={formatDate(post.date, "en")} /></span>
             <span>·</span>
             <span><T hi={`${post.minutes} मिनट में पढ़ें`} hg={`${post.minutes} min read`} /></span>
