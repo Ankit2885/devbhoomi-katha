@@ -1,5 +1,6 @@
 import T from "@/components/T";
 import { Divider } from "@/components/Ornaments";
+import SocialLinks from "@/components/SocialLinks";
 
 export const metadata = { title: "परिचय" };
 
@@ -29,6 +30,11 @@ export default function About() {
           </div>
         </div>
         <Divider />
+        <div className="join">
+          <h2><T hi="संपर्क करें" hg="Sampark karein" /></h2>
+          <p><T hi="अपनी कथा, सुझाव या सवाल भेजने के लिए हमसे यहाँ जुड़ें:" hg="Apni katha, sujhav ya sawaal bhejne ke liye humse yahan judein:" /></p>
+          <SocialLinks />
+        </div>
       </div>
     </>
   );
