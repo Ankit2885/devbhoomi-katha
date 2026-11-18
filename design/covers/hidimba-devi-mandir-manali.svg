@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#2f5d50"/>
+  <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="11" cy="11" r="1.6" fill="#fffaf2" opacity=".09"/></pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect x="22" y="22" width="1156" height="586" rx="18" fill="none" stroke="#fffaf2" stroke-width="3"/>
+  <rect x="36" y="36" width="1128" height="558" rx="12" fill="none" stroke="#fffaf2" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+  <g transform="translate(60 60)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g><g transform="translate(1140 60)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g><g transform="translate(60 570)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g><g transform="translate(1140 570)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g>
+
+    <path d="M40 330 L240 200 L420 280 L620 150 L820 280 L1000 200 L1160 330" fill="none" stroke="#fffaf2" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M212 232 L240 200 L268 232 L240 242Z" fill="#fffaf2"/><path d="M592 182 L620 150 L648 182 L620 192Z" fill="#fffaf2"/><path d="M972 232 L1000 200 L1028 232 L1000 242Z" fill="#fffaf2"/>
+    <g transform="translate(150 520) scale(1.6)"><path d="M0 -120 L26 -70 L12 -72 L36 -30 L16 -32 L44 10 L-44 10 L-16 -32 L-36 -30 L-12 -72 L-26 -70Z" fill="#1f4438" stroke="#fffaf2" stroke-width="2.5" stroke-linejoin="round"/><rect x="-5" y="10" width="10" height="20" fill="#fffaf2"/></g><g transform="translate(270 540) scale(1.2)"><path d="M0 -120 L26 -70 L12 -72 L36 -30 L16 -32 L44 10 L-44 10 L-16 -32 L-36 -30 L-12 -72 L-26 -70Z" fill="#1f4438" stroke="#fffaf2" stroke-width="2.5" stroke-linejoin="round"/><rect x="-5" y="10" width="10" height="20" fill="#fffaf2"/></g><g transform="translate(380 560) scale(1)"><path d="M0 -120 L26 -70 L12 -72 L36 -30 L16 -32 L44 10 L-44 10 L-16 -32 L-36 -30 L-12 -72 L-26 -70Z" fill="#1f4438" stroke="#fffaf2" stroke-width="2.5" stroke-linejoin="round"/><rect x="-5" y="10" width="10" height="20" fill="#fffaf2"/></g><g transform="translate(820 560) scale(1)"><path d="M0 -120 L26 -70 L12 -72 L36 -30 L16 -32 L44 10 L-44 10 L-16 -32 L-36 -30 L-12 -72 L-26 -70Z" fill="#1f4438" stroke="#fffaf2" stroke-width="2.5" stroke-linejoin="round"/><rect x="-5" y="10" width="10" height="20" fill="#fffaf2"/></g><g transform="translate(930 540) scale(1.2)"><path d="M0 -120 L26 -70 L12 -72 L36 -30 L16 -32 L44 10 L-44 10 L-16 -32 L-36 -30 L-12 -72 L-26 -70Z" fill="#1f4438" stroke="#fffaf2" stroke-width="2.5" stroke-linejoin="round"/><rect x="-5" y="10" width="10" height="20" fill="#fffaf2"/></g><g transform="translate(1050 520) scale(1.6)"><path d="M0 -120 L26 -70 L12 -72 L36 -30 L16 -32 L44 10 L-44 10 L-16 -32 L-36 -30 L-12 -72 L-26 -70Z" fill="#1f4438" stroke="#fffaf2" stroke-width="2.5" stroke-linejoin="round"/><rect x="-5" y="10" width="10" height="20" fill="#fffaf2"/></g>
+    <g transform="translate(600 520) scale(1.25)" stroke="#fffaf2" stroke-width="2.5" stroke-linejoin="round">
+  <path d="M0 -190 L12 -150 L-12 -150Z" fill="#e3b04b"/>
+  <path d="M-40 -150 L40 -150 L54 -128 L-54 -128Z" fill="#3d2a1c"/>
+  <path d="M-58 -128 L58 -128 L74 -98 L-74 -98Z" fill="#3d2a1c"/>
+  <path d="M-78 -98 L78 -98 L96 -62 L-96 -62Z" fill="#3d2a1c"/>
+  <line x1="-60" y1="-62" x2="-60" y2="-58" /><line x1="-30" y1="-62" x2="-30" y2="-58" /><line x1="0" y1="-62" x2="0" y2="-58" /><line x1="30" y1="-62" x2="30" y2="-58" /><line x1="60" y1="-62" x2="60" y2="-58" />
+  <rect x="-70" y="-62" width="140" height="62" fill="#3d2a1c"/>
+  <line x1="-50" y1="-62" x2="-50" y2="0" stroke-width="1.5"/><line x1="-30" y1="-62" x2="-30" y2="0" stroke-width="1.5"/><line x1="30" y1="-62" x2="30" y2="0" stroke-width="1.5"/><line x1="50" y1="-62" x2="50" y2="0" stroke-width="1.5"/>
+  <path d="M-16 0 L-16 -40 L16 -40 L16 0" fill="#e3b04b"/>
+  <path d="M-16 -40 L0 -50 L16 -40" fill="none"/>
+  <rect x="-84" y="0" width="168" height="16" fill="#3d2a1c"/></g>
+  </svg>
