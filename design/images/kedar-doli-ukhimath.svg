@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#9b2c27"/>
+  <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="11" cy="11" r="1.6" fill="#fffaf2" opacity=".09"/></pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect x="22" y="22" width="1156" height="586" rx="18" fill="none" stroke="#fffaf2" stroke-width="3"/>
+  <rect x="36" y="36" width="1128" height="558" rx="12" fill="none" stroke="#fffaf2" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+  <g transform="translate(60 60)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g><g transform="translate(1140 60)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g><g transform="translate(60 570)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g><g transform="translate(1140 570)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g>
+
+    <path d="M40 400 L280 230 L460 320 L680 190 L880 320 L1160 240 L1160 594 L40 594Z" fill="#8a241f" stroke="#fffaf2" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M140 360 C300 420 360 480 560 470 C760 460 860 520 1060 520" fill="none" stroke="#fffaf2" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round"/>
+    <g transform="translate(560 450) scale(0.75)" stroke="#fffaf2" stroke-width="2.5" stroke-linejoin="round">
+  <line x1="-110" y1="0" x2="110" y2="0" stroke-width="6" stroke-linecap="round"/>
+  <path d="M-40 0 L-40 -50 L40 -50 L40 0Z" fill="#e3b04b"/>
+  <path d="M-52 -50 Q0 -100 52 -50Z" fill="#a5302a"/>
+  <circle cx="0" cy="-92" r="7" fill="#e3b04b"/>
+  <line x1="-30" y1="-50" x2="-30" y2="0" stroke-width="1.5"/><line x1="-10" y1="-50" x2="-10" y2="0" stroke-width="1.5"/><line x1="10" y1="-50" x2="10" y2="0" stroke-width="1.5"/><line x1="30" y1="-50" x2="30" y2="0" stroke-width="1.5"/>
+  <g transform="translate(-90 0)"><circle cy="20" r="11" fill="#8a241f"/><path d="M-14 70 L-8 32 L8 32 L14 70" fill="#8a241f"/></g><g transform="translate(90 0)"><circle cy="20" r="11" fill="#8a241f"/><path d="M-14 70 L-8 32 L8 32 L14 70" fill="#8a241f"/></g></g>
+    <g transform="translate(1060 520) scale(0.6)" stroke="#fffaf2" stroke-width="2.5" stroke-linejoin="round">
+  <line x1="0" y1="-150" x2="0" y2="-128"/><path d="M0 -150 L22 -143 L0 -136Z" fill="#e3b04b" stroke="none"/>
+  <circle cx="0" cy="-122" r="6" fill="#e3b04b"/>
+  <ellipse cx="0" cy="-110" rx="20" ry="7" fill="#a5302a"/>
+  <path d="M-16 -104 C-30 -60 -36 -30 -38 0 L38 0 C36 -30 30 -60 16 -104Z" fill="#a5302a"/>
+  <path d="M-26 -70 L26 -70 M-32 -40 L32 -40 M-36 -14 L36 -14" fill="none" stroke-width="2"/>
+  <rect x="-48" y="0" width="96" height="14" fill="#a5302a"/>
+  <rect x="-40" y="14" width="80" height="50" fill="#a5302a"/>
+  <path d="M-12 64 L-12 36 Q0 24 12 36 L12 64" fill="#fffaf2"/></g>
+    <line x1="260" y1="420" x2="260" y2="380" stroke="#fffaf2" stroke-width="3"/><path d="M260 380 L290 389 L260 398Z" fill="#e3b04b"/><line x1="380" y1="460" x2="380" y2="420" stroke="#fffaf2" stroke-width="3"/><path d="M380 420 L410 429 L380 438Z" fill="#fffaf2"/><line x1="720" y1="470" x2="720" y2="430" stroke="#fffaf2" stroke-width="3"/><path d="M720 430 L750 439 L720 448Z" fill="#e3b04b"/><line x1="860" y1="500" x2="860" y2="460" stroke="#fffaf2" stroke-width="3"/><path d="M860 460 L890 469 L860 478Z" fill="#fffaf2"/>
+  </svg>

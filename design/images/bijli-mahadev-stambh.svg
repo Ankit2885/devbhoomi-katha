@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#6e1b17"/>
+  <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="11" cy="11" r="1.6" fill="#fffaf2" opacity=".09"/></pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect x="22" y="22" width="1156" height="586" rx="18" fill="none" stroke="#fffaf2" stroke-width="3"/>
+  <rect x="36" y="36" width="1128" height="558" rx="12" fill="none" stroke="#fffaf2" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+  <g transform="translate(60 60)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g><g transform="translate(1140 60)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g><g transform="translate(60 570)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g><g transform="translate(1140 570)" fill="none" stroke="#fffaf2" stroke-width="2.5"><circle r="14"/><circle r="5" fill="#fffaf2"/></g>
+
+    <g transform="translate(420 440)" stroke="#fffaf2" stroke-width="3">
+      <ellipse cx="0" cy="60" rx="150" ry="30" fill="#8a241f"/>
+      <path d="M-60 60 L-60 -60 Q0 -130 60 -60 L60 60Z" fill="#5a3a2a"/>
+      <path d="M-20 -95 L-5 -40 L-30 0 L-10 60" fill="none" stroke="#e3b04b" stroke-width="4"/>
+      <path d="M30 -80 L10 -20 L35 40" fill="none" stroke="#e3b04b" stroke-width="4"/>
+    </g>
+    <g transform="translate(820 460)" stroke="#fffaf2" stroke-width="3">
+      <path d="M-70 -40 Q0 -60 70 -40 L60 50 Q0 70 -60 50Z" fill="#8a241f"/>
+      <ellipse cx="0" cy="-42" rx="70" ry="16" fill="#fff3c4"/>
+      <path d="M-30 -60 Q0 -110 30 -60" fill="#fff3c4"/>
+    </g>
+    <path d="M420 90 L380 200 L430 200 L390 300" fill="none" stroke="#e3b04b" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+    <g transform="translate(420 90) scale(1.2)"><path d="M-70 20 C-90 20 -96 -6 -76 -14 C-80 -40 -46 -50 -32 -32 C-22 -60 26 -60 32 -28 C56 -40 82 -20 70 2 C88 6 86 20 70 20Z" fill="#fffaf2" opacity=".95"/></g>
+  </svg>
