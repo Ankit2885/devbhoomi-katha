@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPost, getRelated, getPrevNext, formatDate, videoEmbed } from "@/lib/posts";
-import { getCategory, site } from "@/lib/site";
+import { getCategory, getRegion, site } from "@/lib/site";
 import RelatedPosts from "@/components/RelatedPosts";
 import ShareBar from "@/components/ShareBar";
 import SocialLinks from "@/components/SocialLinks";
@@ -48,7 +48,7 @@ export default async function PostPage({ params }) {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": post.category === "samachar" ? "NewsArticle" : "Article",
     headline: post.title,
     description: post.excerpt,
     image: { "@type": "ImageObject", url: image, width: 1200, height: 630 },
@@ -71,7 +71,11 @@ export default async function PostPage({ params }) {
           <nav className="crumbs">
             <Link href="/"><T hi="मुख्य पृष्ठ" hg="Home" /></Link> ›{" "}
             <Link href={`/shreni/${cat.slug}`}><T hi={cat.hi} hg={cat.hg} /></Link>
+            {post.regions.map((r) => getRegion(r)).filter(Boolean).map((r) => (
+              <span key={r.slug}> · <Link href={`/kshetra/${r.slug}`}><T hi={r.hi} hg={r.hg} /></Link></span>
+            ))}
           </nav>
+          {post.category === "samachar" && <div><span className="news-badge"><T hi="समाचार" hg="Samachar" /></span></div>}
           <h1><T hi={post.title} hg={post.titleHg} /></h1>
           <p className="lead"><T hi={post.excerpt} hg={post.excerptHg} /></p>
           <div className="art-meta">
@@ -130,6 +134,17 @@ export default async function PostPage({ params }) {
             </div>
             <p><T hi="जय देवभूमि 🙏" hg="Jai Devbhoomi 🙏" /></p>
           </div>
+
+          {post.sources.length > 0 && (
+            <div className="sources">
+              <h4><T hi="स्रोत" hg="Srot (Sources)" /></h4>
+              <ul>
+                {post.sources.map((s) => (
+                  <li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer nofollow">{s.name}</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {post.tags.length > 0 && (
             <div className="tags">{post.tags.map((t) => <span key={t}>#{t}</span>)}</div>
