@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaWhatsapp, FaInstagram, FaYoutube, FaFacebook, FaTelegram, FaXTwitter } from "react-icons/fa6";
-import { categories, site } from "@/lib/site";
+import { categories, regions, site } from "@/lib/site";
 import { Logo } from "./Ornaments";
 import T from "./T";
 
@@ -34,7 +34,11 @@ export default function Footer() {
           ))}
         </div>
         <div>
-          <h4><T hi="देवभूमि कथा" hg="Devbhoomi Katha" /></h4>
+          <h4><T hi="क्षेत्र" hg="Kshetra" /></h4>
+          {regions.map((r) => (
+            <Link key={r.slug} href={`/kshetra/${r.slug}`}><T hi={r.hi} hg={r.hg} /></Link>
+          ))}
+          <h4 className="foot-h4-gap"><T hi="देवभूमि कथा" hg="Devbhoomi Katha" /></h4>
           <Link href="/kathayen"><T hi="सभी कथाएँ" hg="Sabhi Kathayein" /></Link>
           <Link href="/parichay"><T hi="परिचय" hg="Parichay" /></Link>
           <a href="/sitemap.xml">Sitemap</a>

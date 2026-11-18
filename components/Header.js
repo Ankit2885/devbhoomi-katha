@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { categories, site } from "@/lib/site";
+import { navLinks, site } from "@/lib/site";
 import { Logo } from "./Ornaments";
 import LangSwitcher from "./LangSwitcher";
 import MobileMenu from "./MobileMenu";
@@ -17,9 +17,9 @@ export default function Header() {
           </span>
         </Link>
         <nav className="links">
-          {categories.map((c) => (
-            <Link key={c.slug} href={`/shreni/${c.slug}`}>
-              <T hi={c.hi} hg={c.hg} />
+          {navLinks.map((l) => (
+            <Link key={l.href} href={l.href}>
+              <T hi={l.hi} hg={l.hg} />
             </Link>
           ))}
         </nav>

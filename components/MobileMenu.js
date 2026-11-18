@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { categories } from "@/lib/site";
+import { categories, regions } from "@/lib/site";
 import T from "./T";
 
 export default function MobileMenu() {
@@ -14,6 +14,12 @@ export default function MobileMenu() {
       {open && (
         <div className="mobile-menu" onClick={() => setOpen(false)}>
           <Link href="/kathayen"><T hi="सभी कथाएँ" hg="Sabhi Kathayein" /></Link>
+          {regions.map((r) => (
+            <Link key={r.slug} href={`/kshetra/${r.slug}`}>
+              <span className="mm-ic">{r.icon}</span> <T hi={r.hi} hg={r.hg} />
+            </Link>
+          ))}
+          <div className="mm-sep" />
           {categories.map((c) => (
             <Link key={c.slug} href={`/shreni/${c.slug}`}>
               <span className="mm-ic">{c.icon}</span> <T hi={c.hi} hg={c.hg} />
