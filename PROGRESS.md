@@ -2,6 +2,11 @@
 
 Newest first. Add an entry for every significant change (see `CLAUDE.md`).
 
+## 2026-11-18 — Traffic check: indexing + analytics
+- **Found:** Google had not indexed any page yet (URL Inspection: "URL is unknown to Google", `site:` search empty; sitemap read on 17 Nov with 17 URLs, indexing report still processing). No visitor analytics was installed. Only 2 likes / 0 shares so far.
+- **Changed:** added Vercel Web Analytics (`@vercel/analytics`, `<Analytics />` in `app/layout.js`); sitemap now lists homepage with trailing slash, `/parichay`, lastModified + changeFrequency; requested indexing in Search Console for the homepage and posts.
+- **Next:** link the site from creatorkitly.com, YouTube channel description and Facebook; share every post on WhatsApp/Facebook; keep adding 3–4 posts a week; re-check Search Console Pages report in a week.
+
 ## 2026-11-15 — Language switch bug, mobile image ratio, end-of-story marker
 - **Fixed:** after choosing English/another language, switching back didn't work — Google's `googtrans` cookie on `.creatorkitly.com` was never cleared; now cleared on all parent domains, plus a DOM patch so React doesn't crash on translated pages. Images were stretched on phones (width/height attributes without `height: auto`) — fixed globally; post cover is full-width on phones. Added a clear "॥ कथा समाप्त ॥" marker with diya after every story.
 - **Files:** `components/LangSwitcher.js`, `components/GoogleTranslate.js`, `app/globals.css`, `app/katha/[slug]/page.js`, `CLAUDE.md`.
