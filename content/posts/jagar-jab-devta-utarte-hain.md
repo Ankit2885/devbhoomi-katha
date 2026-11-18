@@ -2,6 +2,7 @@
 title: "जागर: जब पहाड़ों में देवता 'अवतरित' होते हैं"
 excerpt: "ढोल-दमाऊ और हुड़के की थाप, जगरिये की गाथा और फिर किसी व्यक्ति पर देवता का 'आना'। जागर में ऐसा क्यों होता है? मान्यता और विज्ञान दोनों की नज़र से।"
 date: "2026-11-03"
+region: [garhwal, kumaon]
 category: "aisa-kyon"
 cover: "/images/covers/jagar-jab-devta-utarte-hain.jpg"
 cover_alt: "रात में ढोल और दीयों के साथ जागर"

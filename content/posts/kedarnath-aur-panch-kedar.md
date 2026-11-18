@@ -2,6 +2,7 @@
 title: "केदारनाथ और पांडवों की कथा: पंचकेदार का रहस्य"
 excerpt: "महाभारत के बाद पांडव पाप से मुक्ति के लिए शिव को खोजते हुए हिमालय आए। शिव बैल बनकर छिप गए — और यहीं से जन्म हुआ पंचकेदार का।"
 date: "2026-11-05"
+region: garhwal
 category: "pavan-dham"
 cover: "/images/covers/kedarnath-aur-panch-kedar.jpg"
 cover_alt: "बर्फ़ीले पहाड़ों के बीच केदारनाथ मंदिर"
