@@ -6,6 +6,7 @@ import "@fontsource/yatra-one/400.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GoogleTranslate from "@/components/GoogleTranslate";
+import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -55,6 +56,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <GoogleTranslate />
+        <Analytics />
       </body>
     </html>
   );
