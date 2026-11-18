@@ -12,7 +12,7 @@ devi-devta, lok kathayein, pavan dham, parv-parampara and "ऐसा क्य�
 Audience: Hindi-speaking families of Uttarakhand (in the state and outside), mostly on mobile,
 who read and forward on WhatsApp.
 
-TOPIC: <topic>          CATEGORY: <devi-devta | lok-katha | pavan-dham | aisa-kyon | parv-parampara>
+TOPIC: <topic>          REGION: <garhwal | himachal>          CATEGORY: <devi-devta | lok-katha | pavan-dham | aisa-kyon | parv-parampara | samachar>
 SEARCH PHRASES: <3–5 ways people would search this in Hindi/Hinglish, e.g. "golu devta ki katha">
 
 STRUCTURE:

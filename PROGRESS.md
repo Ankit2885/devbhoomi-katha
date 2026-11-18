@@ -2,6 +2,11 @@
 
 Newest first. Add an entry for every significant change (see `CLAUDE.md`).
 
+## 2026-11-18 — Garhwal/Himachal focus: region pages, news section, 6 new posts
+- **Changed:** `regions` in `lib/site.js` + `region:` frontmatter on every post; new landing pages `/kshetra/garhwal`, `/kshetra/himachal`, `/kshetra/kumaon` (intro text, CollectionPage JSON-LD, popular/new tabs); new category `samachar` (धाम समाचार) with `sources:` frontmatter, sources box and `NewsArticle` JSON-LD; header nav now गढ़वाल · हिमाचल · पावन धाम · देवी-देवता · ऐसा क्यों? · समाचार; home gets "क्षेत्र के अनुसार पढ़ें" cards and "धाम समाचार"; footer + mobile menu list regions; sitemap includes region pages.
+- **New posts:** तुंगनाथ, सुरकंडा देवी (Garhwal); हिडिंबा देवी मंदिर, बिजली महादेव (Himachal) — facts from Wikipedia; news: बद्रीनाथ कपाट बंद (16 Nov 2026), केदारनाथ कपाट बंद / ओंकारेश्वर (11–13 Nov 2026) — from Dainik Bhaskar, Hindustan, ETV Bharat.
+- **Open:** region of *पहाड़ की संस्कृति और हमारी जिम्मेदारी* (Kanda mela) not set — ask Ankit which Kanda.
+
 ## 2026-11-18 — Traffic check: indexing + analytics
 - **Found:** Google had not indexed any page yet (URL Inspection: "URL is unknown to Google", `site:` search empty; sitemap read on 17 Nov with 17 URLs, indexing report still processing). No visitor analytics was installed. Only 2 likes / 0 shares so far.
 - **Changed:** added Vercel Web Analytics (`@vercel/analytics`, `<Analytics />` in `app/layout.js`); sitemap now lists homepage with trailing slash, `/parichay`, lastModified + changeFrequency; requested indexing in Search Console for the homepage and posts.
