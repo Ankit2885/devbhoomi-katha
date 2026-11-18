@@ -1,5 +1,5 @@
 import { getAllPosts } from "@/lib/posts";
-import { categories, site } from "@/lib/site";
+import { categories, regions, site } from "@/lib/site";
 
 export default function sitemap() {
   const posts = getAllPosts();
@@ -16,6 +16,7 @@ export default function sitemap() {
     { url: `${site.url}/`, lastModified: newest, changeFrequency: "daily", priority: 1 },
     { url: `${site.url}/kathayen`, lastModified: newest, changeFrequency: "daily", priority: 0.7 },
     { url: `${site.url}/parichay`, changeFrequency: "yearly", priority: 0.3 },
+    ...regions.map((r) => ({ url: `${site.url}/kshetra/${r.slug}`, lastModified: newest, changeFrequency: "weekly", priority: 0.75 })),
     ...cats,
     ...postUrls,
   ];

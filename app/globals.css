@@ -63,6 +63,8 @@ body > .skiptranslate { display: none !important; }
 .menu-btn { display: none; font-size: 24px; width: 42px; height: 42px; border-radius: 10px; color: var(--white); }
 .mobile-menu { position: absolute; top: 76px; left: 0; right: 0; background: var(--geru2); padding: 10px 20px 20px; display: grid; gap: 2px; box-shadow: 0 20px 30px rgba(0, 0, 0, .2); }
 .mobile-menu a { padding: 12px 8px; border-bottom: 1px dotted rgba(255, 250, 242, .35); font-size: 18px; }
+.mm-sep { height: 10px; border-bottom: 2px dotted rgba(255, 250, 242, .5); margin-bottom: 6px; }
+.foot-h4-gap { margin-top: 18px; }
 .mm-ic { display: inline-block; min-width: 40px; font-family: var(--f-head); opacity: .8; }
 
 /* ---- बटन ---- */
@@ -98,13 +100,33 @@ body > .skiptranslate { display: none !important; }
 @keyframes flicker { 0% { transform: scale(1, 1); } 50% { transform: scale(.92, 1.08) rotate(-2deg); } 100% { transform: scale(1.04, .95) rotate(2deg); } }
 
 /* ---- श्रेणियाँ ---- */
-.cats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 40px; }
+.cats { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-top: 40px; }
 .cat { background: var(--card); border: 2px dashed var(--geru); border-radius: 16px; padding: 18px 12px; text-align: center; transition: .2s; }
 .cat:hover { background: var(--geru); color: var(--white); border-style: solid; }
 .cat:hover span, .cat:hover .cat-ic { color: var(--white); }
 .cat-ic { font-family: var(--f-display), serif; font-size: 26px; color: var(--geru); line-height: 1.3; }
 .cat b { display: block; font-size: 18px; margin-top: 2px; }
 .cat span { font-size: 14px; color: var(--muted); }
+
+/* ---- क्षेत्र कार्ड ---- */
+.regions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.region-card { position: relative; overflow: hidden; border-radius: var(--radius); padding: 26px 24px 22px; color: var(--white); background: var(--geru2);
+  background-image: radial-gradient(rgba(255, 250, 242, .09) 1.4px, transparent 1.6px); background-size: 20px 20px; transition: transform .2s; }
+.region-card:hover { transform: translateY(-3px); }
+.region-card .rc-ic { position: absolute; right: 14px; top: 6px; font-family: var(--f-display); font-size: 70px; opacity: .14; line-height: 1; }
+.region-card h3 { font-family: var(--f-display); font-weight: 400; font-size: 30px; }
+.region-card p { opacity: .9; font-size: 15.5px; margin-top: 4px; }
+.region-card span.rc-more { display: inline-block; margin-top: 12px; font-weight: 700; border-bottom: 2px dotted var(--white); }
+.region-card.garhwal { background-color: #8a241f; }
+.region-card.himachal { background-color: #2f5d50; }
+.region-card.kumaon { background-color: #6b3a1c; }
+.region-intro { max-width: 760px; margin: 0 auto; font-size: 18px; line-height: 1.85; color: var(--ink); text-align: center; }
+.region-tag { display: inline-block; margin-left: 6px; color: var(--muted); font-weight: 500; }
+.news-badge { display: inline-block; background: var(--geru); color: var(--white); font-weight: 700; font-size: 13px; padding: 3px 12px; border-radius: 999px; margin-bottom: 6px; }
+.sources { margin-top: 26px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px; font-size: 15px; }
+.sources h4 { color: var(--geru); margin-bottom: 6px; }
+.sources li { margin-left: 18px; }
+.sources a { color: var(--geru); text-decoration: underline; word-break: break-word; }
 
 /* ---- सेक्शन शीर्षक ---- */
 .sec-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 26px; }
@@ -290,6 +312,7 @@ body > .skiptranslate { display: none !important; }
   .mandala { width: 230px; }
   .grid { grid-template-columns: repeat(2, 1fr); }
   .cats { grid-template-columns: repeat(3, 1fr); }
+  .regions { grid-template-columns: 1fr; }
   .post-card.featured { grid-template-columns: 1fr; }
   .post-card.featured .pc-img { min-height: 0; aspect-ratio: 1200 / 630; }
   .post-card.featured .pc-body { padding: 22px; }
@@ -310,7 +333,6 @@ body > .skiptranslate { display: none !important; }
   .lang > button, .lang-more > button { padding: 4px 8px; }
   .grid { grid-template-columns: 1fr; gap: 20px; }
   .cats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .cats .cat:last-child { grid-column: 1 / -1; }
   .bell-l2 { display: none; }
   .bell { width: 30px; }
   .bell-l, .bell-r { height: 96px; }

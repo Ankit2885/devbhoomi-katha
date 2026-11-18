@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
-import { categories, site } from "@/lib/site";
+import { categories, regions, site } from "@/lib/site";
 import PostCard from "@/components/PostCard";
 import SocialLinks from "@/components/SocialLinks";
 import PopularPosts from "@/components/PopularPosts";
@@ -10,9 +10,11 @@ import { Bell, Diya, AipanMandala, Divider } from "@/components/Ornaments";
 export default function Home() {
   const posts = getAllPosts();
   const featured = posts.find((p) => p.featured) || posts[0];
-  const latest = posts.filter((p) => p.slug !== featured?.slug).slice(0, 6);
+  const latest = posts.filter((p) => p.slug !== featured?.slug && p.category !== "samachar").slice(0, 6);
   const why = posts.filter((p) => p.category === "aisa-kyon").slice(0, 4);
   const videos = posts.filter((p) => p.video).slice(0, 3);
+  const news = posts.filter((p) => p.category === "samachar").slice(0, 3);
+  const regionCount = (slug) => posts.filter((p) => p.regions.includes(slug)).length;
   const countBy = (slug) => posts.filter((p) => p.category === slug).length;
 
   return (
@@ -29,7 +31,7 @@ export default function Home() {
               <br />
               <T hi="एक कथा कहता है" hg="ek katha kehta hai" />
             </h1>
-            <p><T hi="गोलू देवता से नंदा देवी तक — उत्तराखंड के देवी-देवताओं, लोक कथाओं, पावन धामों और रहस्यों का संग्रह।" hg="Golu Devta se Nanda Devi tak — Uttarakhand ke devi-devtaon, lok kathaon, pavan dhamon aur rahasyon ka sangrah." /></p>
+            <p><T hi="केदारनाथ से हिडिंबा देवी तक — गढ़वाल और हिमाचल के देवी-देवताओं, पावन धामों, लोक कथाओं और धाम समाचारों का संग्रह।" hg="Kedarnath se Hidimba Devi tak — Garhwal aur Himachal ke devi-devtaon, pavan dhamon, lok kathaon aur dham samacharon ka sangrah." /></p>
             <div className="cta">
               <Link className="btn" href="/kathayen"><T hi="कथाएँ पढ़ें" hg="Kathayein padhein" /></Link>
               <Link className="btn ghost" href="/shreni/aisa-kyon"><T hi="ऐसा क्यों होता है?" hg="Aisa kyon hota hai?" /></Link>
@@ -58,6 +60,20 @@ export default function Home() {
         </div>
       </div>
 
+      <section className="wrap sec">
+        <div className="sec-head"><h2><T hi="क्षेत्र के अनुसार पढ़ें" hg="Kshetra ke anusaar padhein" /></h2></div>
+        <div className="regions">
+          {regions.map((r) => (
+            <Link key={r.slug} href={`/kshetra/${r.slug}`} className={`region-card ${r.slug}`}>
+              <span className="rc-ic">{r.icon}</span>
+              <h3><T hi={r.hi} hg={r.hg} /></h3>
+              <p><T hi={r.descHi} hg={r.descHg} /></p>
+              <span className="rc-more"><T hi={`${regionCount(r.slug)} कथाएँ पढ़ें →`} hg={`${regionCount(r.slug)} kathayein padhein →`} /></span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {featured && (
         <section className="wrap sec">
           <div className="sec-head"><h2><T hi="आज की विशेष कथा" hg="Aaj ki vishesh katha" /></h2></div>
@@ -76,6 +92,16 @@ export default function Home() {
           {latest.map((p) => <PostCard key={p.slug} post={p} />)}
         </div>
       </section>
+
+      {news.length > 0 && (
+        <section className="wrap sec">
+          <div className="sec-head">
+            <h2><T hi="धाम समाचार 📰" hg="Dham Samachar 📰" /></h2>
+            <Link href="/shreni/samachar" className="more"><T hi="सभी समाचार →" hg="Sabhi samachar →" /></Link>
+          </div>
+          <div className="grid">{news.map((p) => <PostCard key={p.slug} post={p} />)}</div>
+        </section>
+      )}
 
       {why.length > 0 && (
         <section className="wrap sec">
