@@ -16,7 +16,11 @@ export const metadata = {
   title: { default: `${site.name} — ${site.tagline}`, template: `%s | ${site.name}` },
   description: site.tagline,
   applicationName: site.name,
-  keywords: ["उत्तराखंड", "देवभूमि", "देवी-देवता", "लोक कथा", "कुमाऊँ", "गढ़वाल", "Uttarakhand", "Devbhoomi", "Pahadi katha"],
+  keywords: [
+    "उत्तराखंड के मंदिर", "गढ़वाल के मंदिर", "हिमाचल के मंदिर", "देवभूमि", "देवी-देवता", "शक्तिपीठ", "लोक कथा",
+    "गढ़वाल", "हिमाचल", "कुमाऊँ", "पहाड़ी देवता", "धाम समाचार",
+    "Uttarakhand temples", "Garhwal mandir", "Himachal mandir", "Devbhoomi", "Pahadi katha", "Shaktipeeth",
+  ],
   openGraph: {
     siteName: site.name,
     locale: "hi_IN",
