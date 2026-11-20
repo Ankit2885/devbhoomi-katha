@@ -7,6 +7,7 @@ category: "samachar"
 cover: "/images/covers/kedarnath-kapat-band-omkareshwar-2026.jpg"
 cover_alt: "बर्फ़ से ढका केदारनाथ मंदिर और पहाड़ी रास्ते पर जाती पालकी-डोली (चित्र)"
 tags: ["केदारनाथ", "कपाट बंद", "ओंकारेश्वर मंदिर", "ऊखीमठ", "रुद्रप्रयाग", "गढ़वाल समाचार"]
+keywords: ["केदारनाथ कपाट बंद 2026", "kedarnath kapat band 2026", "ओंकारेश्वर मंदिर ऊखीमठ", "केदारनाथ शीतकालीन गद्दी"]
 sources:
   - name: "हिन्दुस्तान — केदारनाथ के कपाट बंद, अब ओंकारेश्वर मंदिर में होंगे बाबा के दर्शन"
     url: "https://www.livehindustan.com/uttarakhand/kedarnath-kapat-closed-for-winter-now-can-see-in-onkareshwar-201794360467677.html"

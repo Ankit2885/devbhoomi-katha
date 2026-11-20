@@ -7,6 +7,7 @@ category: "samachar"
 cover: "/images/covers/badrinath-kapat-band-2026.jpg"
 cover_alt: "बर्फ़ के बीच बद्रीनाथ मंदिर का रंगीन मुखद्वार और बंद होते कपाट (चित्र)"
 tags: ["बद्रीनाथ", "कपाट बंद", "चारधाम यात्रा 2026", "चमोली", "गढ़वाल समाचार"]
+keywords: ["बद्रीनाथ कपाट बंद 2026", "badrinath kapat band 2026", "चारधाम यात्रा 2026", "बद्रीनाथ शीतकालीन पूजा"]
 sources:
   - name: "दैनिक भास्कर — 207 दिन बाद बंद हुए बद्रीनाथ धाम के कपाट"
     url: "https://www.bhaskar.com/local/uttarakhand/chamoli/news/badrinath-dham-kapat-band-char-dham-yatra-record-darshan-139697884.html"
