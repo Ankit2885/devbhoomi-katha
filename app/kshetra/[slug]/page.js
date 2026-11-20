@@ -18,6 +18,7 @@ export async function generateMetadata({ params }) {
     title,
     description: r.descHi,
     alternates: { canonical: `/kshetra/${r.slug}` },
+    keywords: [`${r.hi} के मंदिर`, `${r.hi} के देवी-देवता`, `${r.hg} mandir`, `${r.hg} temples`, `${r.hi} की लोक कथाएँ`, `${r.hi} समाचार`, "शक्तिपीठ", "देवभूमि"],
     openGraph: { title, description: r.descHi, url: `${site.url}/kshetra/${r.slug}` },
   };
 }
