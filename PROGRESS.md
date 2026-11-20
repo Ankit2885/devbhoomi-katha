@@ -2,6 +2,12 @@
 
 Newest first. Add an entry for every significant change (see `CLAUDE.md`).
 
+## 2026-11-20 — Trending posts from Google Trends + keyword/FAQ SEO
+- **Trends checked (Google Trends, Uttarakhand + Himachal, "mandir", past 3 months, rising):** neem karoli baba mandir dehradun (breakout), vindhyavasini mandir haridwar +3,400%, gauri kedareshwar +2,700%, kamleshwar mahadev mandir +800%, mandir aipan design +350–450%, naina devi mandir himachal +300%, nagarkot mata mandir (breakout, Himachal); Baikunth Chaturdashi searches peak every November.
+- **New posts:** कमलेश्वर महादेव / बैकुंठ चतुर्दशी 2026 खड़ा दीया (Garhwal, festival 23 Nov 2026; sources Amar Ujala, Regional Reporter), नैना देवी मंदिर बिलासपुर, बज्रेश्वरी देवी / नगरकोट धाम कांगड़ा (Himachal; facts from Wikipedia). Each with cover + inline graphic, Hinglish version, FAQ section, internal links.
+- **SEO code:** `keywords:` frontmatter (merged with tags, region and category into meta keywords + JSON-LD); FAQ section → FAQPage JSON-LD (`extractFaq` in `lib/posts.js`); BreadcrumbList JSON-LD on posts; keywords on region pages; broader site keywords in `app/layout.js`; `keywords:` added to 10 existing posts.
+- **Next ideas from trends:** Gauri Kedareshwar, Vindhyavasini (Haridwar), Aipan mandir design post, Jwala Ji, Chintpurni.
+
 ## 2026-11-18 — Garhwal/Himachal focus: region pages, news section, 6 new posts
 - **Changed:** `regions` in `lib/site.js` + `region:` frontmatter on every post; new landing pages `/kshetra/garhwal`, `/kshetra/himachal`, `/kshetra/kumaon` (intro text, CollectionPage JSON-LD, popular/new tabs); new category `samachar` (धाम समाचार) with `sources:` frontmatter, sources box and `NewsArticle` JSON-LD; header nav now गढ़वाल · हिमाचल · पावन धाम · देवी-देवता · ऐसा क्यों? · समाचार; home gets "क्षेत्र के अनुसार पढ़ें" cards and "धाम समाचार"; footer + mobile menu list regions; sitemap includes region pages.
 - **New posts:** तुंगनाथ, सुरकंडा देवी (Garhwal); हिडिंबा देवी मंदिर, बिजली महादेव (Himachal) — facts from Wikipedia; news: बद्रीनाथ कपाट बंद (16 Nov 2026), केदारनाथ कपाट बंद / ओंकारेश्वर (11–13 Nov 2026) — from Dainik Bhaskar, Hindustan, ETV Bharat.
