@@ -14,6 +14,13 @@ export function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
 }
 
+// टैग + खास सर्च कीवर्ड + क्षेत्र/श्रेणी — एक जगह, बिना दोहराव
+function postKeywords(post) {
+  const regionNames = post.regions.map((r) => getRegion(r)).filter(Boolean).flatMap((r) => [r.hi, r.hg]);
+  const cat = getCategory(post.category);
+  return [...new Set([...post.keywords, ...post.tags, ...regionNames, cat.hi, "देवभूमि", "Devbhoomi"])];
+}
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = await getPost(slug);
@@ -31,7 +38,7 @@ export async function generateMetadata({ params }) {
       images: [{ url: post.cover || "/images/og-default.jpg", width: 1200, height: 630, alt: post.coverAlt || post.title }],
     },
     twitter: { card: "summary_large_image", title: post.title, description: post.excerpt, images: [post.cover || "/images/og-default.jpg"] },
-    keywords: post.tags,
+    keywords: postKeywords(post),
   };
 }
 
@@ -54,7 +61,7 @@ export default async function PostPage({ params }) {
     image: { "@type": "ImageObject", url: image, width: 1200, height: 630 },
     datePublished: post.date,
     dateModified: post.date,
-    keywords: post.tags.join(", "),
+    keywords: postKeywords(post).join(", "),
     articleSection: cat.hi,
     inLanguage: "hi",
     ...(post.author ? { author: { "@type": "Person", name: post.author } } : {}),
@@ -62,10 +69,32 @@ export default async function PostPage({ params }) {
     mainEntityOfPage: url,
   };
 
+  const region = post.regions.map((r) => getRegion(r)).filter(Boolean)[0];
+  const crumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: site.name, item: site.url },
+      region
+        ? { "@type": "ListItem", position: 2, name: region.hi, item: `${site.url}/kshetra/${region.slug}` }
+        : { "@type": "ListItem", position: 2, name: cat.hi, item: `${site.url}/shreni/${cat.slug}` },
+      { "@type": "ListItem", position: 3, name: post.title, item: url },
+    ],
+  };
+  const faqLd = post.faq.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+      }
+    : null;
+
   return (
     <>
       <ReadingProgress />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }} />
+      {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
       <article className="article">
         <header className="art-head wrap-narrow">
           <nav className="crumbs">
